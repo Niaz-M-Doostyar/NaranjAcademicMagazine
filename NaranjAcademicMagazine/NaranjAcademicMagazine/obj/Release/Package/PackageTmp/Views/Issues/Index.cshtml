@@ -1,0 +1,46 @@
+﻿@model List<NaranjAcademicMagazine.Controllers.Issuehelper>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainPageLayout.cshtml";
+}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/Content/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate mb-0 text-center">
+                <p class="breadcrumbs mb-0"><span class="mr-2"><a href=@Url.Action("Index","Home")>Home <i class="fa fa-chevron-right"></i></a></span> <span>Issues <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Issues</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section">
+    <div class="container issue-container">
+        @foreach (var i in Model)
+        {
+
+        <div class="issue-card-root">
+             <div class="issue-year">@i.year</div>
+             <div class="issue-body">
+                 @foreach (var y in i.issue)
+                 {
+                    
+                 <div class="issue-card">
+                     @{
+                         string src = "~/Areas/Admin/UploadedFiles/" + y.imageString;
+                     }
+                     <img src="@Url.Content(src)" />
+                     <a href=@Url.Action("WriterDetails", "Issues")>
+                         <h2>Volume 10, Issue 1</h2>
+                         <span>August 2024</span>
+                     </a>
+                 </div>
+                 }
+             </div>
+        </div>   
+        }
+    </div>
+</section>
+

@@ -1,0 +1,84 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "ReadContent";
+    Layout = "~/Views/Shared/_MainPageLayout.cshtml";
+}
+ 
+@for( int i = 0; i < Model.Rows.Count; i++)
+{ 
+<div>
+    <div class="bread-crumb-root">
+        <div class="container bread-crumb">
+            <p><span><a href=@Url.Action("Index", "Home")>Home <i class="fa fa-chevron-right"></i></a></span> <span><a href=@Url.Action("Index", "Issues")>Issues <i class="fa fa-chevron-right"></i></a></span> <span><a href=@Url.Action("Index", "Issues")>Valume @Model.Rows[i][9], issue @Model.Rows[i][10] <i class="fa fa-chevron-right"></i></a> </span><span>@Model.Rows[i][1]</span></p>
+        </div>
+    </div>
+    <div class="read-content-root">
+        <div class="container read-content-title">
+            <p>ARTICLE</p>
+            <h2>@Model.Rows[i][1]</h2>
+            <div class="dot-line"></div>
+        </div>
+    </div>
+    
+    <div class="container read-content-body">
+
+        <div class="left-container">
+            <div class="title-item">
+                <p>SHAERE</p>
+                <div class="under-line">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                </div>
+            </div>
+            <div class="title-item">
+                <p>DETAILS</p>
+                <div class="under-line">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                </div>
+            </div>
+            <div class="read-content">
+                <a href=@Url.Action("Search", "Home", new { author = @Model.Rows[i][3], id = @Model.Rows[i][0]})><strong>@Model.Rows[i][3]</strong>  @Model.Rows[i][4]</a><br />
+                <a href=@Url.Action("Search", "Home", new { author = @Model.Rows[i][5], id = @Model.Rows[i][0]})><strong>@Model.Rows[i][5]</strong>  @Model.Rows[i][6]</a><br />
+                <a class="doi"><strong>DOI:</strong></a><br />
+                <p><strong>Year:</strong> @Model.Rows[i][11] (@Model.Rows[i][11]) / <strong>Volume:</strong> @Model.Rows[i][9] / <strong>Issue:</strong>  @Model.Rows[i][10] </p>
+                <p><strong>Page:</strong>  @Model.Rows[i][7]</p>
+                @{
+                    string src = "~/Areas/Admin/UploadedFiles/" + @Model.Rows[i][12];
+                }
+                <a href=@Url.Content(src) target="_blank"><strong><span class="fa fa-file-text-o"></span> Full Text</strong></a>
+                <div class="view-item">@Model.Rows[i][8]</div>
+                <button class="btn-back">BACK TO ISSUE</button>
+            </div>
+        </div>
+
+        
+        <div class="right-container">
+            <div class="title-item">
+                <p>ABSTRACT</p>
+                <div class="under-line">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                </div>
+            </div>
+            <p class="body-text">
+                @Model.Rows[i][2]
+            </p>
+            <div class="title-item">
+                <p>KEYWORDS</p>
+                <div class="under-line">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                </div>
+            </div>
+            @*<div class="key-list">
+                <button class="key-btn">button 2 </button>
+                <button class="key-btn">button 33 2 </button>
+                <button class="key-btn">button 33 2 </button>
+                <button class="key-btn">button 55 2 </button>
+                <button class="key-btn">button 88 2 </button>
+            </div>*@
+        </div>
+    </div>
+</div>
+}

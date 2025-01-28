@@ -1,0 +1,229 @@
+﻿.bread-crumb-root {
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #e8e8e8;
+}
+
+    .bread-crumb-root .bread-crumb {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+    }
+
+        .bread-crumb-root .bread-crumb p {
+            margin: 0px;
+        }
+
+
+.read-content-root {
+    width: 100%;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #dedede;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+    .read-content-root .read-content-title {
+        position: relative;
+        height: 100%;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+        .read-content-root .read-content-title p {
+            margin-bottom: 5px;
+            font-size: 11px;
+            color: #4b4b4b;
+            letter-spacing: 6px;
+        }
+
+        .read-content-root .read-content-title h2 {
+            font-size: 26px;
+            color: #636363;
+            margin: 0px;
+            padding-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .read-content-root .read-content-title .dot-line {
+            position: absolute;
+            bottom: -1px;
+            left: 0px;
+            background-color: #4b4b4b;
+            height: 3px;
+            width: 50px;
+        }
+
+
+
+.title-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+    .title-item p {
+        padding-bottom: 5px;
+        margin: 0px;
+    }
+
+    .title-item .under-line {
+        display: flex;
+        width: 100%;
+    }
+
+        .title-item .under-line .line-1 {
+            width: 50px;
+            height: 1px;
+            background-color: #4b4b4b;
+        }
+
+        .title-item .under-line .line-2 {
+            width: 100%;
+            height: 1px;
+            background-color: #dedede;
+        }
+
+.read-content-body {
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+    .read-content-body .left-container {
+        width: 30%;
+        padding-right: 15px;
+    }
+
+    .read-content-body .right-container {
+        width: 70%;
+        padding-left: 15px;
+    }
+
+        .read-content-body .right-container .body-text {
+            font-size: 15px;
+            line-height: 26px;
+            color: #777;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+.btn-back {
+    background-color: #555;
+    border-color: rgb(70, 70, 70);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 11px;
+    border: none;
+}
+
+.key-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.key-btn {
+    display: inline-block;
+    font-family: "Play", sans-serif, sans-serif;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    color: #777;
+    padding: 6px 10px;
+    font-size: 11px;
+}
+    .key-btn:hover {
+        background-color: #9f999930;
+        color: #a9e84f;
+    }
+
+.read-content {
+    width: 100%;
+}
+
+    .read-content h2 {
+        margin: 0px 0px 20px;
+        padding: 0px;
+        border: black;
+    }
+
+.doi {
+    margin: 10px 0px 10px;
+}
+
+.view-item {
+    margin: 10px 0px;
+}
+
+.read-content a:hover {
+    cursor: pointer;
+    color: #87CEEB;
+    text-decoration: underline;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 1200px) {
+    .read-content-body {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+
+    .read-content-body {
+        display: flex;
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+
+        .read-content-body .left-container {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .read-content-body .right-container {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+            .read-content-body .right-container .body-text {
+                font-size: 15px;
+                line-height: 26px;
+                color: #777;
+                margin-bottom: 20px;
+                font-weight: normal;
+            }
+
+    .read-content-root .read-content-title h2 {
+        font-size: 23px;
+        color: #636363;
+        margin: 0px;
+        padding-bottom: 20px;
+        font-weight: 700;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .read-content-root {
+        padding-top: 10px;
+    }
+    .read-content-root .read-content-title h2 {
+        font-size: 18px;
+        padding: 10px;
+    }
+    .read-content-root .read-content-title p {
+        padding: 10px;
+    }
+
+}

@@ -1,0 +1,133 @@
+﻿.header-navbar {
+    border-top: 1px solid #ececec;
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    box-sizing: border-box;
+}
+.header-navbar .app-navbar ul {
+    list-style: none;
+}
+
+#menu-bar{
+    display: none;
+}
+
+.header-navbar label{
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+    justify-content:center;
+    align-items: center;
+    
+}
+
+.header-navbar .app-navbar ul li {
+    position: relative;
+    float: left;
+}
+
+    .header-navbar .app-navbar ul li a {
+        text-transform: initial;
+        font-size: 15px;
+        padding: 20px;
+        color: rgba(0, 0, 0, 0.7);
+        display: block;
+        transition: .3s all ease;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .header-navbar .app-navbar ul li ul li a {
+        color: #b1b1b1;
+    }
+    .header-navbar .app-navbar ul li a:hover {
+        background-color: transparent;
+        color: #a9e84f;
+        text-decoration: none;
+        border-bottom: 2px solid #517c8d;
+        transition: .3s all ease;
+    }
+
+.header-navbar .app-navbar ul li ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    background: #151515;
+    width: 200px;
+}
+
+    .header-navbar .app-navbar ul li ul li {
+        width: 100%;
+        background: #151515;
+        border-top: 1px solid rgba(0, 0, 0, 0.10);
+    }
+
+.header-navbar .app-navbar ul li:focus > ul,
+.header-navbar .app-navbar ul li:hover > ul {
+        display: flex;
+ }
+
+
+@media (max-width: 991px) {
+
+    .header-navbar {
+        padding: 20px;
+        background: #1e1e1e;
+        justify-content: flex-start;
+    }
+.header-navbar label {
+    color: white;
+}
+
+.header-navbar label {
+    display: flex;
+}
+
+    .header-navbar .app-navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1e1e1e;
+        border-top: 1px solid #000;
+        display: none;
+    }
+
+ .header-navbar .app-navbar ul li {
+     color: #b1b1b1;
+     width: 100%;
+ }
+
+ .header-navbar .app-navbar ul li ul {
+     position: relative;
+     width: 100%;
+     padding-left: 25px;
+    background: #151515;
+
+ }
+  .header-navbar .app-navbar ul li a {
+        color: #b1b1b1;
+    }
+ .header-navbar .app-navbar ul li ul li {
+    background: #151515;
+     width: 100%;
+ }
+
+.header-navbar .app-navbar ul li ul li ul {
+    width: 100%;
+    left: 0;
+}
+
+#menu-bar:checked ~ .app-navbar{
+    display: flex;
+}
+
+
+}

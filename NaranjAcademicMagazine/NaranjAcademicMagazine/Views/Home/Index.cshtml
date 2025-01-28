@@ -1,0 +1,112 @@
+﻿@*@model System.Data.DataTable*@
+@using NaranjAcademicMagazine.Areas.Admin.Models
+@model NaranjAcademicMagazine.Areas.Admin.Models.CombinedViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainPageLayout.cshtml";
+}
+
+<section class="hero-wrap">
+    <div class="mx-5">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                @*@{int u = 0; }
+                        @foreach (var c in ViewBag.SliderTable)
+                        {
+
+                            if (u == 0)
+                            {
+                                ++u;*@
+                                <div class="item active">
+                                    <div class="card">
+                                        <div class="row g-0">
+                                            <div class="col-md-9">
+                                                <img src="~/Content/images/naranj.jpg" style="width: 100%; height: 340px;">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="font-weight:bold">Naranj Academic and Scientific Journal of Natural and Medical Sciences</h4>
+                                                    <p class="card-text">This journal is about Sience, Technology and other different issues.</p>
+                                                    <p class="card-text"><small class="text-body-secondary">by Kandahar University</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @*}
+                            else
+                            {*@
+                                <div class="item">
+                                    <div class="card">
+                                        <div class="row g-0">
+                                            <div class="col-md-9">
+                                                <img src="~/Content/images/naranjp.jpg" style="width: 100%; height: 340px;">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card-body">
+                                                    <h4 class="card-title" style="font-weight:bold">نارنج د ساینسي او طبی علومو علمی او څیړنيز ژورنال</h4>
+                                                    <p class="card-text">دغه علمی او څیړنيز ژورنال طبی، ټکنالوجی او نور مسایل چاپ ته سپاری</p>
+                                                    <p class="card-text"><small class="text-body-secondary">د کندهار پوهنتون له طرفه</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+@{ 
+foreach (var iss in ViewBag.IssueTable)
+{
+    <div class="container" style="text-align:center; font-weight:bold; margin-top:30px; margin-bottom:20px; font-size:25px;">
+        Last Issue: Volume @iss.volume, Issue  @iss.issue<span style="font-size:14px;">(@iss.year.ToString("MMMM") @iss.year.Year)</span><br /><br />
+        <p>Articles</p>
+    </div>
+    }
+
+    foreach (var top in ViewBag.TopicTable)
+    {
+
+    <div class="articals-root container">
+        <div class="books-logo"><img src="~/Content/images/open-book.png" /></div>
+        <div class="articals-content">
+            <a class="hover-home-color" href=@Url.Action("ReadContent", "Issues", new { id = top.topicId })><h2>@top.title</h2></a>
+            <p><strong>Year:</strong> @top.year.Year (@top.year.ToString("MMMM")) / <strong>Volume:</strong> @top.volume/ <strong>Issue:</strong>  @top.issue </p>
+            <a href=@Url.Action("Search", "Home", new { author = top.author1 })><strong>@top.author1</strong> @top.designation1</a>
+            <a href=@Url.Action("Search", "Home", new { author = top.author2 })><strong>@top.author2</strong> @top.designation2</a>
+            <a class="doi"><strong>DOI:</strong></a>
+            <p><strong>Page:</strong> @top.page</p>
+            <div class="text-view">
+                @{
+                    string src = "~/Areas/Admin/UploadedFiles/" + @top.pdfFileString;
+                }
+                <a href=@Url.Content(src) target="_blank"><strong><span class="fa fa-file-text-o"></span> Full Text</strong></a>
+                <div>@top.views</div>
+            </div>
+        </div>
+    </div>
+
+                        }
+                    }
+
+

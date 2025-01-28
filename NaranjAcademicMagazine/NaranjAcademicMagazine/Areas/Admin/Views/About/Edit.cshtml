@@ -1,0 +1,52 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPageLayout.cshtml";
+}
+
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href=@Url.Action("Index","Home")><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href=@Url.Action("Index","About")>About</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Edit Issue -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0" style="text-align:center; font-size: 24px;">Edit Author Details</h3>
+                </div>
+                <!-- Edit Issue -->
+                <div class="formContainer">
+                    @for (int i = 0; i < Model.Rows.Count; i++)
+                    {
+                        using (Html.BeginForm("Edit", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div>
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" value="@Model.Rows[i][1]" />
+                                <label for="description">Description</label>
+                                <input type="text" id="description" name="description" value="@Model.Rows[i][2]" />
+                            </div>
+                            <input type="submit" value="Save" />
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>

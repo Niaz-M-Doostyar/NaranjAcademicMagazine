@@ -1,0 +1,61 @@
+﻿@model NaranjAcademicMagazine.Areas.Admin.Models.EditorialBoard
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPageLayout.cshtml";
+}
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href=@Url.Action("Index","Home")><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href=@Url.Action("Index","EditorialBoard")>Editorial Board</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Add</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Add Issue -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0" style="text-align:center; font-size: 24px;">Add Member Details</h3>
+                </div>
+                <!-- Add Issue -->
+                <div class="formContainer">
+                    @using (Html.BeginForm("Create", "EditorialBoard", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div>
+                            <label for="memberName">Name</label>
+                            <input type="text" id="memberName" name="memberName" />
+                            <label for="description">Description</label>
+                            <input type="text" id="description" name="description" />
+                            <label for="pass">Email</label>
+                            <input type="email" id="email" name="email" />
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" name="phone" />
+                            <label for="pass">Facebook Link</label>
+                            <input type="text" id="facebook" name="facebook" />
+                            <label for="pass">Twitter</label>
+                            <input type="text" id="twitter" name="twitter" />
+                            <label for="pass">LinkedIn</label>
+                            <input type="text" id="linkedIn" name="linkedIn" />
+                            <label for="image">Image</label>
+                            <input type="file" id="image" name="image" />
+                        </div>
+                        <input type="submit" value="Submit" />
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+

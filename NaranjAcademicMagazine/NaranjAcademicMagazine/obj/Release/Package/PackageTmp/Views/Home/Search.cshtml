@@ -1,0 +1,43 @@
+﻿@model System.Data.DataTable
+@*@using NaranjAcademicMagazine.Areas.Admin.Models
+    @model NaranjAcademicMagazine.Areas.Admin.Models.CombinedViewModel*@
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_MainPageLayout.cshtml";
+}
+
+<div class="search-header-con">
+    <div class="container search-con">
+        <h2>Search</h2>
+    </div>
+</div>
+
+@{
+    string searchTerm = Request.QueryString["author"];
+    <div class=" container" style="font-weight:bold; margin-top:30px; margin-bottom:20px; font-size:20px;">
+        <p>Search Results: "@searchTerm"</p>
+    </div>
+}
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+        <div class="articals-root container">
+            <div class="books-logo"><img src="~/Content/images/open-book.png" /></div>
+            <div class="articals-content">
+                <a style=""><h2>@Model.Rows[i][1]</h2></a>
+                <p><strong>Year:</strong> @Model.Rows[i][11] / <strong>Volume:</strong> @Model.Rows[i][9] / <strong>Issue:</strong>  @Model.Rows[i][10] </p>
+                <a href="#"><strong>@Model.Rows[i][3]</strong> @Model.Rows[i][4]</a>
+                <a href="#"><strong>@Model.Rows[i][5]</strong> @Model.Rows[i][6]</a>
+                <a class="doi"><strong>DOI:</strong></a>
+                <p><strong>Page:</strong> @Model.Rows[i][7]</p>
+                <div class="text-view">
+                    @{
+                        string src = "~/Areas/Admin/UploadedFiles/" + @Model.Rows[i][12];
+                    }
+                    <a href=@Url.Content(src) target="_blank"><strong><span class="fa fa-file-text-o"></span> Full Text</strong></a>
+                    <div>@Model.Rows[i][8]</div>
+                </div>
+            </div>
+        </div>
+    }
+
+

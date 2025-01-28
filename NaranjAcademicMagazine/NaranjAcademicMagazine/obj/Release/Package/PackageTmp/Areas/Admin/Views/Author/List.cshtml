@@ -1,0 +1,21 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPageLayout.cshtml";
+}
+
+    <div class="card-author" style="margin-top:30px;">
+        @for (int i = 0; i < Model.Rows.Count; i++)
+        {
+            string src = "~/Areas/Admin/UploadedFiles/" + @Model.Rows[i][6];
+            <img src="@Url.Content(src)" width="100" height="100" />
+            @*<img src="~/Content/img/theme/profile-cover.jpg" alt="John" style="width:100%">*@
+            <h1>@Model.Rows[i][1]</h1>
+            <p class="title">@Model.Rows[i][2]</p>
+            <p>@Model.Rows[i][3]</p>
+            <p>@Model.Rows[i][8]</p>
+            <div style="margin: 24px 0;">
+                <span>@Model.Rows[i][4] </span><span>@Model.Rows[i][5] </span><span>@Model.Rows[i][7]</span>
+            </div>
+        }
+    </div>

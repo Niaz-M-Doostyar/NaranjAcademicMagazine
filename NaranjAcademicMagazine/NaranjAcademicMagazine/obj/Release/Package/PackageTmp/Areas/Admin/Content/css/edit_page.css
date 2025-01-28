@@ -1,0 +1,11 @@
+﻿.image-upload{
+}
+
+.image-upload input{
+    display: none;
+}
+
+.image-upload img {
+   width: 150px;
+   height: 100px;
+}

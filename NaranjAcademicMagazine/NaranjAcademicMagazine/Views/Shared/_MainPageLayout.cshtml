@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href=@Url.Content("/Content/css/animate.css")>
+
+    <link rel="stylesheet" href=@Url.Content("/Content/css/owl.carousel.min.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/owl.theme.default.min.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/magnific-popup.css")>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href=@Url.Content("/Content/css/flaticon.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/style.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/home.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/signup.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/submit.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/header.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/nav_bar.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/readContent.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/search.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/issue_page.css")>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/writer_details.css")>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="header-root">
+        <img class="header-start" src="~/Content/images/kdru.png" alt="KDRU" style="width:120px; height:120px;" />
+        <div class="header-center" style="margin-bottom:0px; line-height:24px; font-size:25px; display: flex;  flex-direction: column"><strong>Naranj</strong><small style="color: rgba(0, 0, 0, 0.5); font-size:18px; font-weight:400;">Academic and Scientific Journal of Medical and Natural Sciences</small></div>
+        <div class="header-end">
+            <div class="header-btn">
+                <div class="pissn">
+                    P-ISSN: 2518-5748
+                </div>
+                <div class="social-media mt-2 d-flex flex-column">
+                    <p class="mb-0 d-flex">
+                        <button type="button" style="border: 1px solid #505050; color: #505050" class="btn btn-outline-light" onclick="location.href='@Url.Action("Login","Home")'" ,"Submit")>Login / Register</button>
+                        <a href="#" class="d-flex align-items-center justify-content-center ml-2" style="border: 1px solid #505050;" class="btn btn-outline-light"><span class="fa fa-globe"><i class="sr-only">En/Pa</i></span></a>
+
+                    </p>
+                </div>
+            </div>
+            <form action="#" class="searchform order-lg-last">
+                <div class="form-group d-flex">
+                    <input type="text" class="form-control pl-2" placeholder="Search">
+                    <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <header class="header-navbar">
+        <input type="checkbox" id="menu-bar"/>
+        <label for="menu-bar"><span class="fa fa-bars" style="margin-right: 10px;"></span>    Menu</label>
+        <nav class="app-navbar">
+            <ul>
+                <li><a href=@Url.Action("Index","Home") >Home </a></li>
+                <li>
+                    <a href=@Url.Action("Index","About")>About<span style="margin-left: 5px;" class="fa fa-caret-down"></span> </a>
+                    <ul>
+                        <li><a href=@Url.Action("Aim","About")>Aim & Scope</a></li>
+                        <li><a href=@Url.Action("Indexing","About")>Indexing</a></li>
+                        <li><a href=@Url.Action("Copyright","About")>Copyright & Licensing</a></li>
+                        <li><a href=@Url.Action("Editorial","About")>Editorial Office</a></li>
+                    </ul>
+                </li>
+                <li><a  href=@Url.Action("Index","EditorialBoard")>Editorial Board</a></li>
+                <li>
+                    <a href="#">Notes & Contributors<span style="margin-left: 5px;" class="fa fa-caret-down"></span> </a>  
+                    <ul>
+                        <li><a href=@Url.Action("Guidline","Note")>Publication Guidline</a></li>
+                        <li><a href=@Url.Action("Policy","Note")>Submission and Publication Policy</a></li>
+                        <li><a href=@Url.Action("Editor","Note")>Notes for Editors and Reviewers</a></li>
+                        <li><a href=@Url.Action("Copyright","Note")>Copyrights Waiver Form</a></li>
+                    </ul>
+                </li>
+                <li><a href=@Url.Action("Index","Issues")>Issues</a></li>
+                <li><a href=@Url.Action("Index","Announcement")>Announcements</a></li>
+                <li><a href=@Url.Action("Index","Author") >Authors</a></li>
+                <li><a href=@Url.Action("Index","Submit")>Submit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    @*<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container-fluid" style="background-color: #87CEEB">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item"><a href=@Url.Action("Index","Home") class="nav-link">Home</a></li>
+                        <li class="nav-item about">
+                            <a href=@Url.Action("Index","About") class="nav-link dropbtn">About <i class="fa fa-caret-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href=@Url.Action("Aim","About")>Aim & Scope</a>
+                                <a href=@Url.Action("Indexing","About")>Indexing</a>
+                                <a href=@Url.Action("Copyright","About")>Copyright & Licensing</a>
+                                <a href=@Url.Action("Editorial","About")>Editorial Office</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href=@Url.Action("Index","EditorialBoard") class="nav-link">Editorial Board</a></li>
+                        <li class="nav-item about">
+                            <a href="#" class="nav-link dropbtn">Notes & Contributors <i class="fa fa-caret-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href=@Url.Action("Guidline","Note")>Publication Guidline</a>
+                                <a href=@Url.Action("Policy","Note")>Submission and Publication Policy</a>
+                                <a href=@Url.Action("Editor","Note")>Notes for Editors and Reviewers</a>
+                                <a href=@Url.Action("Copyright","Note")>Copyrights Waiver Form</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href=@Url.Action("Index","Issues") class="nav-link">Issues</a></li>
+                        <li class="nav-item"><a href=@Url.Action("Index","Announcement") class="nav-link">Announcements</a></li>
+                        <li class="nav-item"><a href=@Url.Action("Index","Author") class="nav-link">Authors</a></li>
+                        <li class="nav-item"><a href=@Url.Action("Index","Submit") class="nav-link">Submit</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>*@
+
+
+
+
+
+
+
+
+    @RenderBody()
+    <footer class="ftco-footer" style="background-color: #1a1a1aab">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-sm-12 col-md-2">
+                    <div class="ftco-footer-widget mb-4">
+                        <div>
+                            <img src="~/Content/images/kdru.png" alt="KDRU" style="width:150px; height:150px;" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved with <a href="https://kdru.edu.af/" target="_blank">Kandahar University</a>
+                        </h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="text">By Naranj Academic and Scientific Journal of Medical and Natural Sciences</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <p class="mb-0 d-flex">
+                            <a href="https://www.facebook.com/profile.php?id=100090329093637&mibextid=LQQJ4d" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                            <a href="https://x.com/kandaharuniver1?s=11&t=FTgVuh4asb3H6TlZkPdFLg" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                            <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon fa fa-map marker"></span><span class="text">Loya Eidgah, Disct 14th, Kandahar, Afghanistan</span></li>
+                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+93 700450402</span></a></li>
+                                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">Journals@kdru.edu.af</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+
+    <script src=@Url.Content("/Content/js/jquery.min.js")></script>
+    <script src=@Url.Content("/Content/js/jquery-migrate-3.0.1.min.js")></script>
+    <script src=@Url.Content("/Content/js/popper.min.js")></script>
+    <script src=@Url.Content("/Content/js/bootstrap.min.js")></script>
+    <script src=@Url.Content("/Content/js/jquery.easing.1.3.js")></script>
+    <script src=@Url.Content("/Content/js/jquery.waypoints.min.js")></script>
+    <script src=@Url.Content("/Content/js/jquery.stellar.min.js")></script>
+    <script src=@Url.Content("/Content/js/owl.carousel.min.js")></script>
+    <script src=@Url.Content("/Content/js/jquery.magnific-popup.min.js")></script>
+    <script src=@Url.Content("/Content/js/jquery.animateNumber.min.js")></script>
+    <script src=@Url.Content("/Content/js/scrollax.min.js")></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src=@Url.Content("/Content/js/google-map.js")></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src=@Url.Content("/Content/js/main.js")></script>
+</body>
+</html>

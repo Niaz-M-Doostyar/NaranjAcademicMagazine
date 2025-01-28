@@ -1,0 +1,47 @@
+﻿@using NaranjAcademicMagazine.Areas.Admin.Models
+@model NaranjAcademicMagazine.Areas.Admin.Models.CombinedViewModel
+@{
+    ViewBag.Title = "WriterDetails";
+    Layout = "~/Views/Shared/_MainPageLayout.cshtml";
+}
+
+<div class="writer-details-con">
+    <div class="container writer-con">
+        <h2>Volume 21, Issue 1</h2>
+    </div>
+</div>
+
+<div class="container image-container">
+    <img src="~/Content/images/front.jpg" />
+    <div class="image-container-text">
+        <h2></h2>
+    </div>
+</div>
+<div class=" container" style="font-weight:bold; margin-top:30px; margin-bottom:20px; font-size:20px;">
+    <p>Articles</p>
+</div>
+@foreach (var top in ViewBag.TopicTable)
+{
+
+    <div class="articals-root container">
+        <div class="books-logo"><img src="~/Content/images/open-book.png" /></div>
+        <div class="articals-content">
+            <a class="hover-home-color" href=@Url.Action("ReadContent", "Issues", new { id = top.topicId })><h2>@top.title</h2></a>
+            <p><strong>Year:</strong> @top.year.Year (@top.year.ToString("MMMM")) / <strong>Volume:</strong> @top.volume/ <strong>Issue:</strong>  @top.issue </p>
+            <a href=@Url.Action("Search", "Home", new { author = top.author1 })><strong>@top.author1</strong> @top.designation1</a>
+            <a href=@Url.Action("Search", "Home", new { author = top.author2 })><strong>@top.author2</strong> @top.designation2</a>
+            <a class="doi"><strong>DOI:</strong></a>
+            <p><strong>Page:</strong> @top.page</p>
+            <div class="text-view">
+                @{
+                    string src = "~/Areas/Admin/UploadedFiles/" + @top.pdfFileString;
+                }
+                <a href=@Url.Content(src) target="_blank"><strong><span class="fa fa-file-text-o"></span> Full Text</strong></a>
+                <div>@top.views</div>
+            </div>
+        </div>
+    </div>
+
+}
+
+

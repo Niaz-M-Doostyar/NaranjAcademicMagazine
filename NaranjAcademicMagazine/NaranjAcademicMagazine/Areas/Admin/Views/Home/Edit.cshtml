@@ -1,0 +1,64 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_MainPageLayout.cshtml";
+}
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item"><a href=@Url.Action("Index","Home")><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href=@Url.Action("Homepage","Home")>Homepage</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Edit Issue -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0" style="text-align:center; font-size: 24px;">Edit Issue</h3>
+                </div>
+                <!-- Edit Issue -->
+                <div class="formContainer">
+                    @for (int i = 0; i < Model.Rows.Count; i++)
+                    {
+                        using(Html.BeginForm("Edit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                                <div>
+                                    <label for="uname">Volume</label>
+                                    <input type="text" id="volume" name="volume" value="@Model.Rows[i][1]" />
+                                    <label for="pass">Issue</label>
+                                    <input type="text" id="Issue" name="Issue" value="@Model.Rows[i][2]" />
+                                    <label for="date">Date</label>
+                                    <input type="date" name="date" id="date" value="12-12-12" oninput="elog('input', this); return false;" onchange="elog('change', this); return false;"/>
+                                    <div>
+                                    <label for="uname">Image</label>
+                                    @{
+                                        string src = "~/UploadedFiles/" + @Model.Rows[i][4];
+                                    }
+                                    <img src="@Url.Content(src)" width="100" height="100" />
+                                    <input type="file" name="image" />
+                                        </div>
+                                </div>
+                                <input type="submit" value="Save" />
+                            
+                                            }
+                                        }
+                    </div>
+
+            </div>
+        </div>
+    </div>
+

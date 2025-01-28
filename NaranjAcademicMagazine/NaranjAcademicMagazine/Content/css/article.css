@@ -1,0 +1,54 @@
+﻿
+.articals-root {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0px 0px 30px;
+    margin: 0px 0px 30px;
+}
+
+.articals-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.direction{
+    color: black;
+    width:100%;
+    padding:40px;
+}
+
+    .articals-content h2 {
+        margin: 0px 0px 20px;
+        padding: 0px;
+        border: black;
+    }
+
+.text-view {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.books-logo {
+    margin-right: 20px;
+}
+
+    .books-logo img {
+        width: 50px;
+        height: 30px;
+    }
+
+.doi {
+    margin: 10px 0px 10px;
+}
+
+.articals-root .articals-content a:hover {
+    cursor: pointer;
+    color: #87CEEB;
+    text-decoration: underline;
+    background-color: transparent;
+    box-sizing: border-box;
+}

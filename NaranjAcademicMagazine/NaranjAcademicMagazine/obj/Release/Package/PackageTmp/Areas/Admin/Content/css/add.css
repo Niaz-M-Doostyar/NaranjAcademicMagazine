@@ -1,0 +1,72 @@
+﻿body {
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+label {
+    margin: 10px;
+}
+
+.formContainer {
+    width: 50%;
+    margin: auto;
+    background: linear-gradient(to bottom, #5e72e4 13%, #66ffff 100%);
+    padding: 5px 20px 15px 20px;
+    border: 1px solid rgb(191, 246, 250);
+    border-radius: 3px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+input[type="text"] {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #5e72e4;
+    color: white;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+label {
+    margin-left: 5px;
+    display: block;
+}
+
+a {
+    color: black;
+}
+
+@media (min-width: 600px) {
+    .Fields {
+        flex-direction: column-reverse;
+    }
+}
+
+.card-author {
+    background: linear-gradient(to bottom, #5e72e4 60%, #66ffff 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.title {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+}
